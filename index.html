@@ -3,131 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wine Guide India | Best Wines</title>
 
-<!-- SEO -->
-<meta name="description" content="Best wine guide in India. Find best wine under 1000, wine for beginners and buy wine in Mumbai.">
+<title>Wine Guide India | Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  color: white;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
+color:white;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
-  font-weight: bold;
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-.hero {
-  text-align: center;
-  padding: 40px 20px;
+nav h2{color:#ff4d4d;}
+nav a{color:white;text-decoration:none;margin-left:15px;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-.hero h1 {
-  font-size: 36px;
+.hero h1{
+font-size:40px;
+background:linear-gradient(90deg,#ff4d4d,#ff9966);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-.hero p {
-  color: #aaa;
+.hero p{color:#aaa;margin-top:10px;}
+
+.section{
+padding:80px 20px;
 }
 
-.container {
-  padding: 20px;
+.title{text-align:center;margin-bottom:30px;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  transition: 0.3s;
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:20px;
+transition:0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card:hover{
+transform:translateY(-10px);
 }
 
-.card img {
-  width: 100%;
-  border-radius: 15px;
+/* BUTTONS */
+.btn{
+display:block;
+margin-top:10px;
+padding:10px;
+text-align:center;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
 }
 
-.card h2 {
-  margin: 10px 0;
-}
+.amazon{background:#ff9900;}
+.flipkart{background:#2874f0;}
+.swiggy{background:#fc8019;}
+.zomato{background:#e23744;}
+.blinkit{background:#f7c948;}
+.bigbasket{background:#84c225;}
+.google{background:#555;}
 
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #ff4d4d;
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #888;
+footer{
+text-align:center;
+padding:30px;
+color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<header>🍷 Wine Guide India</header>
+<nav>
+<h2>🍷 Wine</h2>
+<div>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+</div>
+</nav>
 
 <div class="hero">
-  <h1>Best Wine Guide</h1>
-  <p>Explore top wines in India & earn smart buying tips</p>
+<h1>Wine Guide India</h1>
+<p>Find & Explore Best Wine Options Online</p>
 </div>
 
-<div class="container">
+<div class="section">
+<h2 class="title">Buy From Top Platforms</h2>
 
-<!-- Wine Under 1000 -->
+<div class="grid">
+
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1514361892635-e95564a27c01" alt="">
-  <h2>Best Wine Under ₹1000</h2>
-  <p>Top affordable wines in India with great taste.</p>
-
-  <a href="https://www.amazon.in/" class="btn" target="_blank">
-    Buy Now
-  </a>
+<h3>Amazon</h3>
+<p>Explore wine related products</p>
+<a href="https://www.amazon.in/s?k=wine" class="btn amazon" target="_blank">Open Amazon</a>
 </div>
 
-<!-- Beginners -->
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb" alt="">
-  <h2>Wine for Beginners</h2>
-  <p>Start your wine journey with easy and smooth options.</p>
-
-  <a href="https://www.amazon.in/" class="btn" target="_blank">
-    Explore
-  </a>
+<h3>Flipkart</h3>
+<p>Wine accessories & more</p>
+<a href="https://www.flipkart.com/search?q=wine" class="btn flipkart" target="_blank">Open Flipkart</a>
 </div>
 
-<!-- Mumbai -->
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1524594154908-eddc3d8b4f6a" alt="">
-  <h2>Buy Wine in Mumbai</h2>
-  <p>Find best wine shops and online delivery options.</p>
-
-  <a href="https://www.amazon.in/" class="btn" target="_blank">
-    Shop Now
-  </a>
+<h3>Swiggy Instamart</h3>
+<p>Check availability in your area</p>
+<a href="https://www.swiggy.com/instamart" class="btn swiggy" target="_blank">Open Swiggy</a>
 </div>
 
+<div class="card">
+<h3>Zomato</h3>
+<p>Wine shops & restaurants</p>
+<a href="https://www.zomato.com" class="btn zomato" target="_blank">Open Zomato</a>
+</div>
+
+<div class="card">
+<h3>Blinkit</h3>
+<p>Quick delivery options</p>
+<a href="https://blinkit.com" class="btn blinkit" target="_blank">Open Blinkit</a>
+</div>
+
+<div class="card">
+<h3>BigBasket</h3>
+<p>Groceries & beverages</p>
+<a href="https://www.bigbasket.com" class="btn bigbasket" target="_blank">Open BigBasket</a>
+</div>
+
+<div class="card">
+<h3>Find Wine Near You</h3>
+<p>Search local wine shops</p>
+<a href="https://www.google.com/search?q=wine+shop+near+me" class="btn google" target="_blank">Search Now</a>
+</div>
+
+</div>
 </div>
 
 <footer>
-  © 2026 Wine Guide India | Affiliate Ready 💰
+© 2026 Wine Guide India | Affiliate Ready 💰
 </footer>
 
 </body>
