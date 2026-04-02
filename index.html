@@ -4,238 +4,162 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wine Guide India | Premium</title>
+<title>Wine Guide Global</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-background:#0d0d0d;
+background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
 color:white;
-scroll-behavior:smooth;
 }
 
 /* HERO */
 .hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1514361892635-e95564a27c01') no-repeat center/cover;
+background:url('https://images.unsplash.com/photo-1514361892635-e95564a27c01') center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-position:relative;
-}
-
-.hero::after{
-content:'';
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
 }
 
 .hero h1{
 font-size:45px;
-z-index:1;
 background:linear-gradient(90deg,#ff4d4d,#ff9966);
 -webkit-background-clip:text;
 color:transparent;
 }
 
-.hero p{
-z-index:1;
-color:#ccc;
-margin-top:10px;
-}
-
-.btn{
-z-index:1;
-margin-top:20px;
-padding:12px 25px;
-background:linear-gradient(90deg,#ff4d4d,#ff9966);
-border-radius:30px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.1);
-}
+.hero p{color:#ccc;margin-top:10px;}
 
 /* SECTION */
-.section{
-padding:80px 20px;
-}
-
-.title{
-text-align:center;
-margin-bottom:40px;
-font-size:30px;
-}
+.section{padding:60px 20px;}
+.title{text-align:center;margin-bottom:30px;}
 
 /* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 }
 
 /* CARD */
 .card{
 background:rgba(255,255,255,0.05);
-border-radius:20px;
-overflow:hidden;
-backdrop-filter:blur(15px);
-transition:0.4s;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+padding:20px;
+border-radius:15px;
+transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.02);
-}
+.card:hover{transform:translateY(-10px);}
 
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
+.card h3{margin-bottom:10px;}
+.card p{color:#aaa;}
 
-.card-content{
-padding:15px;
-}
-
-.card h3{
-margin-bottom:5px;
-}
-
-.card p{
-color:#aaa;
-font-size:14px;
-}
-
-.platform-btn{
+.btn{
 display:block;
 margin-top:10px;
 padding:10px;
-text-align:center;
 border-radius:10px;
+text-align:center;
 text-decoration:none;
 color:white;
 font-weight:bold;
 }
 
-/* BUTTON COLORS */
+/* COLORS */
 .amazon{background:#ff9900;}
 .flipkart{background:#2874f0;}
 .swiggy{background:#fc8019;}
 .zomato{background:#e23744;}
-.blinkit{background:#f7c948;}
-.bigbasket{background:#84c225;}
-.google{background:#555;}
+.vivino{background:#8e44ad;}
+.wine{background:#c0392b;}
+.drizly{background:#27ae60;}
+.total{background:#e67e22;}
 
-footer{
-text-align:center;
-padding:40px;
-color:#777;
-}
+footer{text-align:center;padding:30px;color:#777;}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
-<h1>Premium Wine Guide</h1>
-<p>Discover, Explore & Buy Smart 🍷</p>
-<a href="#shop" class="btn">Explore Now</a>
+<h1>Global Wine Guide 🌍</h1>
+<p>Explore & Buy Wine Worldwide</p>
 </div>
 
-<!-- SHOP SECTION -->
-<div class="section" id="shop">
-<h2 class="title">Explore Platforms</h2>
+<!-- INDIA -->
+<div class="section">
+<h2 class="title">India Platforms</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1514361892635-e95564a27c01">
-<div class="card-content">
 <h3>Amazon</h3>
-<p>Wine accessories & products</p>
-<a href="https://www.amazon.in/s?k=wine" class="platform-btn amazon" target="_blank">Open</a>
-</div>
+<p>Accessories & wine products</p>
+<a href="https://www.amazon.in/s?k=wine" class="btn amazon" target="_blank">Open</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb">
-<div class="card-content">
 <h3>Flipkart</h3>
-<p>Best deals on wine items</p>
-<a href="https://www.flipkart.com/search?q=wine" class="platform-btn flipkart" target="_blank">Open</a>
-</div>
+<p>Wine related items</p>
+<a href="https://www.flipkart.com/search?q=wine" class="btn flipkart" target="_blank">Open</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1524594154908-eddc3d8b4f6a">
-<div class="card-content">
 <h3>Swiggy</h3>
-<p>Check nearby availability</p>
-<a href="https://www.swiggy.com/instamart" class="platform-btn swiggy" target="_blank">Open</a>
-</div>
+<p>Nearby availability</p>
+<a href="https://www.swiggy.com" class="btn swiggy" target="_blank">Open</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1547592166-23ac45744acd">
-<div class="card-content">
 <h3>Zomato</h3>
-<p>Wine restaurants & shops</p>
-<a href="https://www.zomato.com" class="platform-btn zomato" target="_blank">Open</a>
+<p>Restaurants & shops</p>
+<a href="https://www.zomato.com" class="btn zomato" target="_blank">Open</a>
+</div>
+
 </div>
 </div>
 
+<!-- GLOBAL -->
+<div class="section">
+<h2 class="title">Global Wine Platforms</h2>
+
+<div class="grid">
+
 <div class="card">
-<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa">
-<div class="card-content">
-<h3>Blinkit</h3>
-<p>Quick delivery options</p>
-<a href="https://blinkit.com" class="platform-btn blinkit" target="_blank">Open</a>
-</div>
+<h3>Vivino</h3>
+<p>World’s largest wine app</p>
+<a href="https://www.vivino.com" class="btn vivino" target="_blank">Open</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e17b">
-<div class="card-content">
-<h3>BigBasket</h3>
-<p>Groceries & beverages</p>
-<a href="https://www.bigbasket.com" class="platform-btn bigbasket" target="_blank">Open</a>
-</div>
+<h3>Wine.com</h3>
+<p>Premium wine store</p>
+<a href="https://www.wine.com" class="btn wine" target="_blank">Open</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
-<div class="card-content">
-<h3>Find Nearby</h3>
-<p>Search wine shop near you</p>
-<a href="https://www.google.com/search?q=wine+shop+near+me" class="platform-btn google" target="_blank">Search</a>
+<h3>Drizly</h3>
+<p>Alcohol delivery service</p>
+<a href="https://drizly.com" class="btn drizly" target="_blank">Open</a>
 </div>
+
+<div class="card">
+<h3>Total Wine</h3>
+<p>Largest wine retailer</p>
+<a href="https://www.totalwine.com" class="btn total" target="_blank">Open</a>
 </div>
 
 </div>
 </div>
 
 <footer>
-© 2026 Wine Guide India | Ultra Premium UI 🚀
+© 2026 Global Wine Guide | World Class 🌍
 </footer>
 
 </body>
