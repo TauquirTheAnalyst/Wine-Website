@@ -3,20 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wine Guide India</title>
+<title>Wine Guide India | Best Wines</title>
+
+<!-- SEO -->
+<meta name="description" content="Best wine guide in India. Find best wine under 1000, wine for beginners and buy wine in Mumbai.">
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d0d0d;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: white;
 }
 
 header {
   text-align: center;
   padding: 20px;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .hero {
@@ -25,8 +29,7 @@ header {
 }
 
 .hero h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 36px;
 }
 
 .hero p {
@@ -38,28 +41,41 @@ header {
 }
 
 .card {
-  background: linear-gradient(145deg, #1a1a1a, #222);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 15px;
+  border-radius: 20px;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  background: #2a2a2a;
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
 }
 
 .card h2 {
-  margin: 0;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 footer {
   text-align: center;
   padding: 20px;
   color: #888;
-  font-size: 14px;
 }
 </style>
 </head>
@@ -70,42 +86,49 @@ footer {
 
 <div class="hero">
   <h1>Best Wine Guide</h1>
-  <p>Learn & Explore Premium Wines</p>
+  <p>Explore top wines in India & earn smart buying tips</p>
 </div>
 
 <div class="container">
 
-  <div class="card" onclick="openPage('under1000')">
-    <h2>Best Wine Under ₹1000</h2>
-  </div>
+<!-- Wine Under 1000 -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1514361892635-e95564a27c01" alt="">
+  <h2>Best Wine Under ₹1000</h2>
+  <p>Top affordable wines in India with great taste.</p>
 
-  <div class="card" onclick="openPage('beginners')">
-    <h2>Wine for Beginners</h2>
-  </div>
+  <a href="https://www.amazon.in/" class="btn" target="_blank">
+    Buy Now
+  </a>
+</div>
 
-  <div class="card" onclick="openPage('mumbai')">
-    <h2>Buy Wine in Mumbai</h2>
-  </div>
+<!-- Beginners -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb" alt="">
+  <h2>Wine for Beginners</h2>
+  <p>Start your wine journey with easy and smooth options.</p>
+
+  <a href="https://www.amazon.in/" class="btn" target="_blank">
+    Explore
+  </a>
+</div>
+
+<!-- Mumbai -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1524594154908-eddc3d8b4f6a" alt="">
+  <h2>Buy Wine in Mumbai</h2>
+  <p>Find best wine shops and online delivery options.</p>
+
+  <a href="https://www.amazon.in/" class="btn" target="_blank">
+    Shop Now
+  </a>
+</div>
 
 </div>
 
 <footer>
-  © 2026 Wine Guide India | Made by Tauquir
+  © 2026 Wine Guide India | Affiliate Ready 💰
 </footer>
-
-<script>
-function openPage(type) {
-  if(type === 'under1000'){
-    alert("Top Picks:\n- Sula Red\n- Fratelli Classic\n- Grover Zampa");
-  }
-  if(type === 'beginners'){
-    alert("Start with:\n- Sweet Wine\n- Rosé Wine\n- Light Red Wine");
-  }
-  if(type === 'mumbai'){
-    alert("Buy from:\n- Local Wine Shops\n- Premium Stores\n- Online Apps");
-  }
-}
-</script>
 
 </body>
 </html>
