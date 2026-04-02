@@ -1,121 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wine App 🍷</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Wine Guide India 🍷</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{margin:0;font-family:Poppins;background:#111;color:white;}
-
-.header{
-padding:10px;
-background:#1c1c1c;
-position:sticky;
-top:0;
-z-index:100;
-}
-
-.search{
-width:100%;
-padding:10px;
-border-radius:10px;
-border:none;
-margin-bottom:10px;
-}
-
-.filter{
-display:flex;
-gap:10px;
-}
-
-.filter button{
-flex:1;
-padding:8px;
-border:none;
-border-radius:8px;
-background:#333;
+body{
+font-family:Arial;
+margin:0;
+background:#0f0f0f;
 color:white;
 }
 
-.container{
-padding:10px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:10px;
+/* HEADER */
+header{
+background:black;
+padding:15px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
 }
 
+/* HERO */
+.hero{
+text-align:center;
+padding:30px;
+background:linear-gradient(90deg,#8b0000,#ff4d4d);
+}
+
+.hero h1{
+margin:0;
+}
+
+/* SECTION */
+.container{
+padding:15px;
+}
+
+/* CARD */
 .card{
 background:#1c1c1c;
-padding:10px;
-border-radius:15px;
-text-align:center;
-}
-
-.card img{
-width:100%;
-height:150px;
-object-fit:cover;
+padding:15px;
+margin-bottom:15px;
 border-radius:10px;
 }
 
-.rating{color:gold;}
-.price{color:#4caf50;}
+.card h3{
+margin-top:0;
+}
 
-.btn{
-background:#ff4d4d;
-padding:8px;
-display:block;
-margin-top:5px;
-border-radius:8px;
+/* BUTTON */
+button{
+width:100%;
+padding:10px;
+margin-top:8px;
+background:red;
 color:white;
-text-decoration:none;
+border:none;
+border-radius:5px;
+}
+
+/* CATEGORY */
+.category{
+font-weight:bold;
+margin:15px 0 5px;
+color:#ff4d4d;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<input type="text" id="search" class="search" placeholder="Search wine...">
+<header>🍷 Wine Guide India</header>
 
-<div class="filter">
-<button onclick="filterPrice()">Price ↓</button>
-<button onclick="filterRating()">Rating ⭐</button>
-</div>
+<div class="hero">
+<h1>Find Best Wine Options</h1>
+<p>Explore, Compare & Buy Smart</p>
 </div>
 
-<div id="products" class="container"></div>
+<div class="container">
 
-<script>
+<div class="category">🔥 Budget Wines</div>
 
-let wines=[
-{name:"Red Wine",price:999,rating:4.5,img:"https://images.unsplash.com/photo-1514361892635-e95564a27c01",link:"https://www.vivino.com"},
-{name:"White Wine",price:799,rating:5,img:"https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb",link:"https://www.wine.com"},
-{name:"Rose Wine",price:699,rating:4,img:"https://images.unsplash.com/photo-1524594154908-eddc3d8b4f6a",link:"https://drizly.com"},
-{name:"Luxury Wine",price:1999,rating:5,img:"https://images.unsplash.com/photo-1547592166-23ac45744acd",link:"https://www.totalwine.com"}
-];
-
-function display(data){
-let html="";
-data.forEach(w=>{
-html+=`
 <div class="card">
-<img src="${w.img}">
-<h3>${w.name}</h3>
-<div class="rating">⭐ ${w.rating}</div>
-<div class="price">₹${w.price}</div>
-<a href="${w.link}" target="_blank" class="btn">Buy</a>
-</div>`;
-});
-document.getElementById("products").innerHTML=html;
-}
+<h3>Wine Under ₹1000</h3>
+<p>Best affordable wines for beginners</p>
 
-display(wines);
+<a href="https://www.vivino.com" target="_blank">
+<button>View Options</button>
+</a>
+</div>
 
-// SEARCH
-document.getElementById("search").addEventListener("input",function(){
-let val=this.value.toLowerCase();
-let filtered=wines.filter(w=>w.name.toLowerCase
+<div class="category">⭐ Premium Wines</div>
+
+<div class="card">
+<h3>Top Rated Wines</h3>
+<p>Explore premium global wines</p>
+
+<a href="https://www.wine.com" target="_blank">
+<button>Explore</button>
+</a>
+</div>
+
+<div class="category">🛒 India Platforms</div>
+
+<div class="card">
+<h3>Check Availability in India</h3>
+<p>Use local delivery platforms</p>
+
+<a href="https://www.swiggy.com" target="_blank">
+<button>Swiggy</button>
+</a>
+
+<a href="https://www.zomato.com" target="_blank">
+<button>Zomato</button>
+</a>
+</div>
+
+<div class="category">📍 Nearby Shops</div>
+
+<div class="card">
+<h3>Find Wine Shop Near You</h3>
+<p>Search local wine stores</p>
+
+<a href="https://www.google.com/search?q=wine+shop+near+me" target="_blank">
+<button>Search Now</button>
+</a>
+</div>
+
+</div>
+
+</body>
+</html>
