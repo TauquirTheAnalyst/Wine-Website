@@ -7,161 +7,104 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #0f0f0f;
-    color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: white;
 }
 
 header {
-    text-align: center;
-    padding: 15px;
-    background: black;
-    font-size: 22px;
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
 }
 
 .hero {
-    text-align: center;
-    padding: 30px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #aaa;
 }
 
 .container {
-    padding: 15px;
+  padding: 20px;
 }
 
 .card {
-    background: #1c1c1c;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    cursor: pointer;
+  background: linear-gradient(145deg, #1a1a1a, #222);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .card:hover {
-    background: #333;
+  transform: scale(1.05);
+  background: #2a2a2a;
 }
 
-.article {
-    display: none;
-    padding: 20px;
+.card h2 {
+  margin: 0;
 }
 
-button {
-    background: crimson;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    margin-top: 10px;
-    width: 100%;
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 14px;
 }
-
-.ad {
-    background: #222;
-    padding: 15px;
-    text-align: center;
-    margin: 20px 0;
-}
-
 </style>
-
-<script>
-function openArticle(title, content) {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("article").style.display = "block";
-
-    document.getElementById("title").innerText = title;
-    document.getElementById("content").innerHTML = content;
-}
-
-function back() {
-    document.getElementById("home").style.display = "block";
-    document.getElementById("article").style.display = "none";
-}
-</script>
-
 </head>
 
 <body>
 
 <header>🍷 Wine Guide India</header>
 
-<!-- HOME -->
-<div id="home">
-
 <div class="hero">
-<h1>Best Wine Guide</h1>
-<p>Learn & Explore</p>
+  <h1>Best Wine Guide</h1>
+  <p>Learn & Explore Premium Wines</p>
 </div>
 
 <div class="container">
 
-<div class="card" onclick="openArticle('Best Wine Under ₹1000', article1)">
-<h2>Best Wine Under ₹1000</h2>
-</div>
+  <div class="card" onclick="openPage('under1000')">
+    <h2>Best Wine Under ₹1000</h2>
+  </div>
 
-<div class="card" onclick="openArticle('Wine for Beginners', article2)">
-<h2>Wine for Beginners</h2>
-</div>
+  <div class="card" onclick="openPage('beginners')">
+    <h2>Wine for Beginners</h2>
+  </div>
 
-<div class="card" onclick="openArticle('Buy Wine in Mumbai', article3)">
-<h2>Buy Wine in Mumbai</h2>
-</div>
-
-</div>
-</div>
-
-<!-- ARTICLE PAGE -->
-<div id="article" class="article">
-
-<button onclick="back()">⬅ Back</button>
-
-<h2 id="title"></h2>
-
-<div class="ad">
-📢 Ad Space (AdSense code here)
-</div>
-
-<p id="content"></p>
-
-<div class="ad">
-📢 Ad Space
-</div>
+  <div class="card" onclick="openPage('mumbai')">
+    <h2>Buy Wine in Mumbai</h2>
+  </div>
 
 </div>
+
+<footer>
+  © 2026 Wine Guide India | Made by Tauquir
+</footer>
 
 <script>
-
-// ARTICLES
-
-let article1 = `
-<p>Top affordable wines include Sula & Fratelli.</p>
-
-<a href="https://www.amazon.in" target="_blank">
-<button>Buy Wine Glass 🍷</button>
-</a>
-
-<a href="https://wa.me/91XXXXXXXXXX" target="_blank">
-<button>Contact Seller</button>
-</a>
-`;
-
-let article2 = `
-<p>Start with sweet wines. Avoid strong wines initially.</p>
-
-<a href="https://www.amazon.in" target="_blank">
-<button>Buy Starter Kit</button>
-</a>
-`;
-
-let article3 = `
-<p>Top shops available in Mumbai area.</p>
-
-<a href="https://wa.me/91XXXXXXXXXX" target="_blank">
-<button>Get Seller Contact</button>
-</a>
-`;
-
+function openPage(type) {
+  if(type === 'under1000'){
+    alert("Top Picks:\n- Sula Red\n- Fratelli Classic\n- Grover Zampa");
+  }
+  if(type === 'beginners'){
+    alert("Start with:\n- Sweet Wine\n- Rosé Wine\n- Light Red Wine");
+  }
+  if(type === 'mumbai'){
+    alert("Buy from:\n- Local Wine Shops\n- Premium Stores\n- Online Apps");
+  }
+}
 </script>
 
 </body>
