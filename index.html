@@ -3,212 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wine Guide Global 🍷</title>
+<title>Wine App 🍷</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{margin:0;font-family:Poppins;background:#111;color:white;}
 
-body{
-background:#0d0d0d;
-color:white;
-scroll-behavior:smooth;
-}
-
-/* HERO */
-.hero{
-height:100vh;
-background:url('https://images.unsplash.com/photo-1514361892635-e95564a27c01') center/cover;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-position:relative;
-}
-
-.hero::after{
-content:'';
-position:absolute;
+.header{
+padding:10px;
+background:#1c1c1c;
+position:sticky;
 top:0;
-left:0;
+z-index:100;
+}
+
+.search{
 width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
+padding:10px;
+border-radius:10px;
+border:none;
+margin-bottom:10px;
 }
 
-.hero h1{
-font-size:45px;
-z-index:1;
-background:linear-gradient(90deg,#ff4d4d,#ff9966);
--webkit-background-clip:text;
-color:transparent;
+.filter{
+display:flex;
+gap:10px;
 }
 
-.hero p{
-z-index:1;
-color:#ccc;
-margin-top:10px;
-}
-
-.btn{
-z-index:1;
-margin-top:20px;
-padding:12px 25px;
-background:linear-gradient(90deg,#ff4d4d,#ff9966);
-border-radius:30px;
-text-decoration:none;
+.filter button{
+flex:1;
+padding:8px;
+border:none;
+border-radius:8px;
+background:#333;
 color:white;
-font-weight:bold;
 }
 
-/* SECTION */
-.section{padding:80px 20px;}
-.title{text-align:center;margin-bottom:40px;font-size:30px;}
-
-/* GRID */
-.grid{
+.container{
+padding:10px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:10px;
 }
 
-/* CARD */
 .card{
-background:rgba(255,255,255,0.05);
-border-radius:20px;
-overflow:hidden;
-backdrop-filter:blur(15px);
-transition:0.4s;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.02);
+background:#1c1c1c;
+padding:10px;
+border-radius:15px;
+text-align:center;
 }
 
 .card img{
 width:100%;
-height:200px;
+height:150px;
 object-fit:cover;
-}
-
-.card-content{
-padding:15px;
-}
-
-.card p{
-color:#aaa;
-font-size:14px;
-}
-
-.platform-btn{
-display:block;
-margin-top:10px;
-padding:10px;
-text-align:center;
 border-radius:10px;
-text-decoration:none;
-color:white;
-font-weight:bold;
 }
 
-/* COLORS */
-.amazon{background:#ff9900;}
-.flipkart{background:#2874f0;}
-.swiggy{background:#fc8019;}
-.zomato{background:#e23744;}
-.vivino{background:#8e44ad;}
-.wine{background:#c0392b;}
-.drizly{background:#27ae60;}
-.total{background:#e67e22;}
-.google{background:#555;}
+.rating{color:gold;}
+.price{color:#4caf50;}
 
-footer{
-text-align:center;
-padding:40px;
-color:#777;
+.btn{
+background:#ff4d4d;
+padding:8px;
+display:block;
+margin-top:5px;
+border-radius:8px;
+color:white;
+text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-<h1>Global Wine Guide 🌍</h1>
-<p>Explore • Compare • Buy Smart 🍷</p>
-<a href="#shop" class="btn">Explore Now</a>
+<div class="header">
+<input type="text" id="search" class="search" placeholder="Search wine...">
+
+<div class="filter">
+<button onclick="filterPrice()">Price ↓</button>
+<button onclick="filterRating()">Rating ⭐</button>
+</div>
 </div>
 
-<!-- SHOP SECTION -->
-<div class="section" id="shop">
-<h2 class="title">Buy Wine Online</h2>
+<div id="products" class="container"></div>
 
-<div class="grid">
+<script>
 
-<!-- RED WINE -->
+let wines=[
+{name:"Red Wine",price:999,rating:4.5,img:"https://images.unsplash.com/photo-1514361892635-e95564a27c01",link:"https://www.vivino.com"},
+{name:"White Wine",price:799,rating:5,img:"https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb",link:"https://www.wine.com"},
+{name:"Rose Wine",price:699,rating:4,img:"https://images.unsplash.com/photo-1524594154908-eddc3d8b4f6a",link:"https://drizly.com"},
+{name:"Luxury Wine",price:1999,rating:5,img:"https://images.unsplash.com/photo-1547592166-23ac45744acd",link:"https://www.totalwine.com"}
+];
+
+function display(data){
+let html="";
+data.forEach(w=>{
+html+=`
 <div class="card">
-<img src="https://images.unsplash.com/photo-1514361892635-e95564a27c01">
-<div class="card-content">
-<h3>Premium Red Wine</h3>
-<p>Top rated wines worldwide</p>
+<img src="${w.img}">
+<h3>${w.name}</h3>
+<div class="rating">⭐ ${w.rating}</div>
+<div class="price">₹${w.price}</div>
+<a href="${w.link}" target="_blank" class="btn">Buy</a>
+</div>`;
+});
+document.getElementById("products").innerHTML=html;
+}
 
-<a href="https://www.vivino.com" target="_blank" class="platform-btn vivino">Buy on Vivino</a>
-<a href="https://www.wine.com" target="_blank" class="platform-btn wine">Buy on Wine.com</a>
-<a href="https://drizly.com" target="_blank" class="platform-btn drizly">Buy on Drizly</a>
+display(wines);
 
-</div>
-</div>
-
-<!-- WHITE WINE -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb">
-<div class="card-content">
-<h3>White Wine</h3>
-<p>Fresh & smooth options</p>
-
-<a href="https://www.amazon.in/s?k=wine+glass" target="_blank" class="platform-btn amazon">Buy Accessories</a>
-<a href="https://www.flipkart.com/search?q=wine" target="_blank" class="platform-btn flipkart">Flipkart</a>
-
-</div>
-</div>
-
-<!-- INDIA DELIVERY -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1524594154908-eddc3d8b4f6a">
-<div class="card-content">
-<h3>India Options</h3>
-<p>Check availability near you</p>
-
-<a href="https://www.swiggy.com" target="_blank" class="platform-btn swiggy">Swiggy</a>
-<a href="https://www.zomato.com" target="_blank" class="platform-btn zomato">Zomato</a>
-<a href="https://www.google.com/search?q=wine+shop+near+me" target="_blank" class="platform-btn google">Find Shop</a>
-
-</div>
-</div>
-
-<!-- GLOBAL STORES -->
-<div class="card">
-<img src="https://images.unsplash.com/photo-1547592166-23ac45744acd">
-<div class="card-content">
-<h3>Global Stores</h3>
-<p>World class wine platforms</p>
-
-<a href="https://www.totalwine.com" target="_blank" class="platform-btn total">Total Wine</a>
-<a href="https://www.vivino.com" target="_blank" class="platform-btn vivino">Vivino</a>
-
-</div>
-</div>
-
-</div>
-</div>
-
-<footer>
-© 2026 Wine Guide Global | Premium 🚀
-</footer>
-
-</body>
-</html>
+// SEARCH
+document.getElementById("search").addEventListener("input",function(){
+let val=this.value.toLowerCase();
+let filtered=wines.filter(w=>w.name.toLowerCase
