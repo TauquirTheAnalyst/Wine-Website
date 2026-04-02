@@ -1,43 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Wine Guide India 🍷</title>
+<title>Free Tools Hub 🚀</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body{
 font-family:Arial;
 margin:0;
-background:#0f0f0f;
+background:#111;
 color:white;
 }
 
-/* HEADER */
 header{
 background:black;
 padding:15px;
 text-align:center;
 font-size:22px;
-font-weight:bold;
 }
 
-/* HERO */
-.hero{
-text-align:center;
-padding:30px;
-background:linear-gradient(90deg,#8b0000,#ff4d4d);
-}
-
-.hero h1{
-margin:0;
-}
-
-/* SECTION */
 .container{
 padding:15px;
 }
 
-/* CARD */
 .card{
 background:#1c1c1c;
 padding:15px;
@@ -45,90 +30,80 @@ margin-bottom:15px;
 border-radius:10px;
 }
 
-.card h3{
-margin-top:0;
-}
-
-/* BUTTON */
 button{
+margin-top:10px;
 width:100%;
 padding:10px;
-margin-top:8px;
-background:red;
+background:#4caf50;
 color:white;
 border:none;
 border-radius:5px;
 }
 
-/* CATEGORY */
-.category{
-font-weight:bold;
-margin:15px 0 5px;
-color:#ff4d4d;
+.output{
+margin-top:10px;
+background:#000;
+padding:10px;
+border-radius:5px;
 }
 </style>
 </head>
 
 <body>
 
-<header>🍷 Wine Guide India</header>
-
-<div class="hero">
-<h1>Find Best Wine Options</h1>
-<p>Explore, Compare & Buy Smart</p>
-</div>
+<header>🚀 Free Tools Hub</header>
 
 <div class="container">
 
-<div class="category">🔥 Budget Wines</div>
-
+<!-- CAPTION GENERATOR -->
 <div class="card">
-<h3>Wine Under ₹1000</h3>
-<p>Best affordable wines for beginners</p>
-
-<a href="https://www.vivino.com" target="_blank">
-<button>View Options</button>
-</a>
+<h3>Instagram Caption Generator</h3>
+<button onclick="caption()">Generate Caption</button>
+<div id="caption" class="output"></div>
 </div>
 
-<div class="category">⭐ Premium Wines</div>
-
+<!-- PASSWORD -->
 <div class="card">
-<h3>Top Rated Wines</h3>
-<p>Explore premium global wines</p>
-
-<a href="https://www.wine.com" target="_blank">
-<button>Explore</button>
-</a>
+<h3>Password Generator</h3>
+<button onclick="password()">Generate Password</button>
+<div id="password" class="output"></div>
 </div>
 
-<div class="category">🛒 India Platforms</div>
-
+<!-- NAME GENERATOR -->
 <div class="card">
-<h3>Check Availability in India</h3>
-<p>Use local delivery platforms</p>
-
-<a href="https://www.swiggy.com" target="_blank">
-<button>Swiggy</button>
-</a>
-
-<a href="https://www.zomato.com" target="_blank">
-<button>Zomato</button>
-</a>
-</div>
-
-<div class="category">📍 Nearby Shops</div>
-
-<div class="card">
-<h3>Find Wine Shop Near You</h3>
-<p>Search local wine stores</p>
-
-<a href="https://www.google.com/search?q=wine+shop+near+me" target="_blank">
-<button>Search Now</button>
-</a>
+<h3>Name Generator</h3>
+<button onclick="nameGen()">Generate Name</button>
+<div id="name" class="output"></div>
 </div>
 
 </div>
+
+<script>
+
+function caption(){
+let captions=[
+"Living my best life ✨",
+"No filter needed 😎",
+"Dream big, hustle harder 💪",
+"Good vibes only 🌈",
+"Smile more 😊"
+];
+document.getElementById("caption").innerText=
+captions[Math.floor(Math.random()*captions.length)];
+}
+
+function password(){
+let pass=Math.random().toString(36).slice(-8);
+document.getElementById("password").innerText=pass;
+}
+
+function nameGen(){
+let names=["Alpha","Nova","Zen","Pixel","Rocket","Prime"];
+document.getElementById("name").innerText=
+names[Math.floor(Math.random()*names.length)];
+}
+
+</script>
 
 </body>
 </html>
